@@ -1,0 +1,18 @@
+Dataset used: https://gist.github.com/pamelafox/c705b02114ea3db0dff0 
+
+--What was the average amount earned globally by each studio between 2002-2012?
+SELECT studio, ROUND(AVG(worldwide)) AS global_average FROM topmovies
+  GROUP BY studio
+  HAVING year BETWEEN "2002" AND "2012";
+
+--Which movies from the Top 100 list were released before 2000?
+SELECT title, year FROM topmovies
+  WHERE year < 2000;
+
+--I want to show how the amount grossed overseas has changed over the years with increased technology / population / marketing / media access.
+SELECT year, ROUND(AVG(overseas)) AS overseas_grossing FROM topmovies
+  GROUP BY year;
+
+--I want to display the database ordered by year. 
+SELECT * FROM topmovies
+  ORDER BY year;
