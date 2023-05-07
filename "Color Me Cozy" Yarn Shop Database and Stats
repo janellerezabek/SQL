@@ -1,0 +1,33 @@
+CREATE TABLE color_me_cozy (id INTEGER, yarn_name TEXT, composition TEXT, yarn_length_meters INTEGER, yarn_weight TEXT, price INTEGER, aisle INTEGER);
+
+INSERT INTO color_me_cozy VALUES (1, "Lemon Lime Twist", "merino wool", 90, "bulky", 19.99, 4);
+INSERT INTO color_me_cozy VALUES (2, "Peaches and Creamsicle", "baby alpaca", 100, "worsted", 24.99, 3);
+INSERT INTO color_me_cozy VALUES (3, "Poppy's Purls", "mohair", 180, "light worsted", 24.99, 2);
+INSERT INTO color_me_cozy VALUES (4, "Vanilla Bean Dream", "cotton", 92, "worsted", 26.99, 3);
+INSERT INTO color_me_cozy VALUES (5, "Blueberry Cheesecake", "merino wool", 125, "super bulky", 26.99, 5);
+INSERT INTO color_me_cozy VALUES (6, "Coconut Cream Pie", "cotton/merino blend", 110, "worsted", 24.99, 3);
+INSERT INTO color_me_cozy VALUES (7, "Lavender Berry Bliss", "alpaca", 80, "light worsted", 19.99, 2);
+INSERT INTO color_me_cozy VALUES (8, "Buttercup Bouquet", "merino wool", 220, "bulky", 29.99, 4);
+INSERT INTO color_me_cozy VALUES (9, "Blood Orange Tart", "mohair", 260, "sport", 34.99, 2);
+INSERT INTO color_me_cozy VALUES (10, "Spiced Mulled Wine", "cotton/merino blend", 100, "bulky", 23.99, 4);
+INSERT INTO color_me_cozy VALUES (11, "Watermelon Sorbet", "baby alpaca", 120, "worsted", 18.99, 3);
+INSERT INTO color_me_cozy VALUES (12, "Shamrock Shake", "merino wool", 160, "super bulky", 27.99, 5);
+INSERT INTO color_me_cozy VALUES (13, "Mango Yogurt Parfait", "mohair/silk blend", 260, "light worsted", 37.99, 2);
+INSERT INTO color_me_cozy VALUES (14, "Butterstotch Truffle", "cotton/merino blend", 190, "bulky", 21.99, 4);
+INSERT INTO color_me_cozy VALUES (15, "Pumpkin Spice Cake", "merino wool", 80, "worsted", 24.99, 3);
+
+/*I want to see all of the yarn options, along with their material, weight, and the price per meter.*/
+SELECT yarn_name, composition, yarn_weight, price / yarn_length_meters AS price_per_meter FROM color_me_cozy;
+
+/*I want to shop for upcoming spring & summer knits. This means I want lighter, more breathable yarn for my projects. Show me the yarn options that are of "light-worsted" or "sport" weights OR are made of 100% cotton.*/
+SELECT yarn_name, yarn_weight, composition FROM color_me_cozy
+    WHERE yarn_weight = "light worsted"
+    OR yarn_weight = "sport"
+    OR composition = "cotton";
+    
+/*What is the average price of the items in aisle 3?*/
+SELECT AVG(price) AS aisle_3_avg FROM color_me_cozy WHERE aisle = "3";
+
+/*Savannah would like to purchase something new for her knitting collection. She has $24. What are her options, and where can she find them?*/
+SELECT yarn_name, price, aisle FROM color_me_cozy
+WHERE price <= 24;
