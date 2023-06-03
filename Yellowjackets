@@ -33,7 +33,7 @@ INSERT INTO character_portrayals VALUES (5, 12, 7);
 INSERT INTO character_portrayals VALUES (6, 6, 11);
 
 /* I want to build a table that shows the character name of all the main Yellowjackets, the actors who play their teenage selves in the '96 timeline, and the actors who play their adult selves in the '21 timeline. */
-SELECT yellowjackets_characters.name, teen.name AS "96_teen_timeline", adult.name AS "21_adult_timeline" FROM character_portrayals
+SELECT yellowjackets_characters.name AS character_name, teen.name AS "96_teen_timeline", adult.name AS "21_adult_timeline" FROM character_portrayals
 JOIN actors teen
 ON teen.actor_id = character_portrayals.actor1_id
 JOIN actors adult
