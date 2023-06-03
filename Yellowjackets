@@ -1,4 +1,3 @@
-/* Create table about the people and what they do here */
 CREATE TABLE actors (actor_id INTEGER PRIMARY KEY, name TEXT, birth_year INTEGER, birth_place TEXT, hair_color TEXT);
 
 INSERT INTO actors VALUES (1, "Liv Hewson", 1995, "Canberra, Australia", "red");
@@ -33,10 +32,11 @@ INSERT INTO character_portrayals VALUES (5, 12, 7);
 INSERT INTO character_portrayals VALUES (6, 6, 11);
 
 /* I want to build a table that shows the character name of all the main Yellowjackets, the actors who play their teenage selves in the '96 timeline, and the actors who play their adult selves in the '21 timeline. */
-SELECT yellowjackets_characters.name AS character_name, teen.name AS "96_teen_timeline", adult.name AS "21_adult_timeline" FROM character_portrayals
+SELECT yellowjackets_characters.name AS character_name, teen.name AS "'96_teen_timeline", adult.name AS "'21_adult_timeline" FROM character_portrayals
 JOIN actors teen
 ON teen.actor_id = character_portrayals.actor1_id
 JOIN actors adult
 ON adult.actor_id = character_portrayals.actor2_id
 JOIN yellowjackets_characters
-ON yellowjackets_characters.character_id = character_portrayals.character_id;
+ON yellowjackets_characters.character_id = character_portrayals.character_id
+ORDER BY character_name ASC;
