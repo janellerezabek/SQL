@@ -16,18 +16,18 @@ INSERT INTO color_me_cozy VALUES (13, "Mango Yogurt Parfait", "mohair/silk blend
 INSERT INTO color_me_cozy VALUES (14, "Butterstotch Truffle", "cotton/merino blend", 190, "bulky", 21.99, 4);
 INSERT INTO color_me_cozy VALUES (15, "Pumpkin Spice Cake", "merino wool", 80, "worsted", 24.99, 3);
 
-/*I want to see all of the yarn options, along with their material, weight, and the price per meter.*/
+/* Build me a table with all of the yarn options, along with their material, weight, and the price per meter. */
 SELECT yarn_name, composition, yarn_weight, price / yarn_length_meters AS price_per_meter FROM color_me_cozy;
 
-/*I want to shop for upcoming spring & summer knits. This means I want lighter, more breathable yarn for my projects. Show me the yarn options that are of "light-worsted" or "sport" weights OR are made of 100% cotton.*/
+/* I want to shop for upcoming spring & summer knits. This means I want lighter, more breathable yarn for my projects. Show me the yarn options that are of "light-worsted" or "sport" weights OR are made of 100% cotton. */
 SELECT yarn_name, yarn_weight, composition FROM color_me_cozy
     WHERE yarn_weight = "light worsted"
     OR yarn_weight = "sport"
     OR composition = "cotton";
     
-/*What is the average price of the items in aisle 3?*/
+/* What is the average price of the items in aisle 3? */
 SELECT AVG(price) AS aisle_3_avg FROM color_me_cozy WHERE aisle = "3";
 
-/*Savannah would like to purchase something new for her knitting collection. She has $24. What are her options, and where can she find them?*/
+/* Savannah would like to purchase something new for her knitting collection. She has $24. What are her options, and where can she find them? */
 SELECT yarn_name, price, aisle FROM color_me_cozy
 WHERE price <= 24;
