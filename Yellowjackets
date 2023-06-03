@@ -18,7 +18,7 @@ CREATE TABLE yellowjackets_characters (character_id INTEGER PRIMARY KEY, name TE
 
 INSERT INTO yellowjackets_characters VALUES (1, "Lottie Matthews");
 INSERT INTO yellowjackets_characters VALUES (2, "Shauna Shipman");
-INSERT INTO yellowjackets_characters VALUES (3, "Vanessa Palmer");
+INSERT INTO yellowjackets_characters VALUES (3, "Van Palmer");
 INSERT INTO yellowjackets_characters VALUES (4, "Taissa Turner");
 INSERT INTO yellowjackets_characters VALUES (5, "Natalie Scatorccio");
 INSERT INTO yellowjackets_characters VALUES (6, "Misty Quigley");
@@ -33,8 +33,10 @@ INSERT INTO character_portrayals VALUES (5, 12, 7);
 INSERT INTO character_portrayals VALUES (6, 6, 11);
 
 /* I want to build a table that shows the character name of all the main Yellowjackets, the actors who play their teenage selves in the '96 timeline, and the actors who play their adult selves in the '21 timeline. */
-SELECT character_portrayals.character_id, teen.name AS "96_timeline_teens", adult.name AS "21_timeline_adults" FROM character_portrayals
+SELECT yellowjackets_characters.name, teen.name AS "96_teen_timeline", adult.name AS "21_adult_timeline" FROM character_portrayals
 JOIN actors teen
 ON teen.actor_id = character_portrayals.actor1_id
 JOIN actors adult
-ON adult.actor_id = character_portrayals.actor2_id;
+ON adult.actor_id = character_portrayals.actor2_id
+JOIN yellowjackets_characters
+ON yellowjackets_characters.character_id = character_portrayals.character_id;
