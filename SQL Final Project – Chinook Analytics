@@ -1,0 +1,80 @@
+#In this SQL, I'm querying a database with multiple tables in it to analyze buying patterns in a digital media store.
+
+
+-- #1. List the top 5 most purchased genres, along with the total number of tracks sold for each genre.
+SELECT g.Name AS Genre, COUNT(*) AS TracksSold
+FROM chinook.genres g
+JOIN tracks t ON g.GenreId = t.GenreId
+JOIN invoice_items ii ON t.TrackId = ii.TrackId
+GROUP BY g.Name
+ORDER BY TracksSold DESC
+LIMIT 5;
+
+-- Find the customer who made the highest single purchase (invoice) and display their full name, invoice ID, and total amount spent.
+SELECT cus.FirstName, cus.LastName, inv.InvoiceId, inv.Total
+FROM chinook.customers cus
+JOIN chinook.invoices inv ON inv.CustomerId = cus.CustomerId
+ORDER BY inv.Total DESC
+LIMIT 1;
+
+-- Identify the artist with the most albums in the dataset. Display the artist's name and the total number of albums.
+SELECT ar.Name AS ArtistName, COUNT(DISTINCT al.AlbumId) AS TotalAlbums
+FROM chinook.artists ar
+JOIN chinook.albums al ON ar.ArtistId = al.ArtistId
+GROUP BY ArtistName
+ORDER BY TotalAlbums DESC
+LIMIT 1;
+
+-- List the top 3 countries with the highest total sales. Show the country name and the total sales amount.
+SELECT inv.BillingCountry AS Country, SUM(inv.Total) AS TotalSales
+FROM invoices inv
+GROUP BY Country
+ORDER BY TotalSales DESC
+LIMIT 3'
+
+-- Find the customer who spent the least amount overall. Display their full name and the total amount spent.
+SELECT cus.FirstName, cus.LastName, SUM(inv.Total) AS TotalAmountSpent
+FROM customers cus
+JOIN invoices inv ON inv.CustomerId = cus.CustomerId
+GROUP BY cus.LastName
+ORDER BY TotalAmountSpent
+LIMIT 1;
+
+-- Show the total number of tracks available for each media type (e.g., MPEG audio file, AAC audio file, etc.).
+SELECT COUNT(t.TrackId) AS TotalTracks, mt.Name AS MediaType
+FROM chinook.media_types mt
+JOIN chinook.tracks t ON t.MediaTypeId = mt.MediaTypeId
+GROUP BY MediaType
+ORDER BY TotalTracks DESC;
+
+-- Identify the album with the most tracks. Display the album name, artist, and the number of tracks.
+SELECT al.Title AS AlbumName, ar.Name AS ArtistName, COUNT(t.TrackId) AS TotalTracks
+FROM albums al
+JOIN artists ar ON al.ArtistId = ar.ArtistId
+JOIN tracks t ON t.AlbumId = al.AlbumId
+GROUP BY AlbumName, ArtistName
+ORDER BY TotalTracks DESC
+LIMIT 1;
+
+-- List the top 5 customers with the highest total spending. Display their full names and total amount spent.
+SELECT c.FirstName || ' ' || c.LastName AS CustomerName, SUM(i.Total) AS TotalAmountSpent
+FROM customers c
+JOIN invoices i ON c.CustomerId = i.CustomerId
+GROUP BY CustomerName
+ORDER BY TotalAmountSpent DESC
+LIMIT 5;
+
+-- Find the most popular track (the one purchased in the most invoices) and display its name and the number of times it was purchased.
+SELECT t.Name AS TrackName, COUNT(*) AS TotalPurchases 
+FROM invoice_items ite
+JOIN invoices inv ON inv.InvoiceId = ite.InvoiceId
+JOIN tracks t ON t.TrackId = ite.TrackId
+GROUP BY TrackName
+ORDER BY TotalPurchases DESC
+LIMIT 1;
+
+-- Show the average revenue per invoice for each billing country. Display the country name and the average invoice total.
+SELECT BillingCountry AS Country, AVG(Total) AS Avg_Inv_Total
+FROM invoices
+GROUP BY Country
+ORDER BY Avg_Inv_Total DESC;
