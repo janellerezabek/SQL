@@ -1,4 +1,4 @@
---In this project, I built a table that shows all of the main characters in the Paramount+ show 'Yellowjackets'. The table contains the actors who play the teenaged-version of the character in the '96 timeline, as well as the actors who play the adult-version of the character in the '21 timeline. I demonstrated how to view the table correctly using SQL joins.
+--In this project, I built a table that shows all of the main characters in the Paramount+ hit television show 'Yellowjackets'. The table contains the actors who play the teenaged-version of the character in the '96 timeline, as well as the actors who play the adult-version of the character in the '21 timeline. I demonstrated how to view the table correctly using SQL joins.
 
 CREATE TABLE actors (actor_id INTEGER PRIMARY KEY, name TEXT, birth_year INTEGER, birth_place TEXT, hair_color TEXT);
 INSERT INTO actors VALUES (1, "Liv Hewson", 1995, "Canberra, Australia", "red");
