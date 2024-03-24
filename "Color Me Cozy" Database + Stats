@@ -1,4 +1,4 @@
---Analysis: In this project, I created a digital knitting shop. I did this by creating a table and inserting data into it for all the items in my store. I then used SQL to analyze and compare yarn options, select only certain kinds of yarn, and examine pricing of the items in the shop.
+--Analysis: In this project, I created a digital knitting shop by making a table and inserting data into it for all the items in my store. I then used SQL to analyze and compare yarn options, select only certain kinds of yarn, and examine pricing of the items in the shop.
 
 CREATE TABLE color_me_cozy (id INTEGER, yarn_name TEXT, composition TEXT, yarn_length_meters INTEGER, yarn_weight TEXT, price INTEGER, aisle INTEGER);
 INSERT INTO color_me_cozy VALUES (1, "Lemon Lime Twist", "merino wool", 90, "bulky", 19.99, 4);
