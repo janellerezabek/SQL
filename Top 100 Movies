@@ -1,5 +1,5 @@
---This project utilizes data found from the Top 100 Movies dataset stored at https://gist.github.com/pamelafox/c705b02114ea3db0dff0
--- The following SQL was written to answer specific questions about the list
+--Analysis: In this project, I utilized data found from the Top 100 Movies dataset, and analyzed the data by writing SQL to answer specific questions about the list.
+--Dataset: https://gist.github.com/pamelafox/c705b02114ea3db0dff0
 
 --What was the average amount earned globally by each studio between 2002-2012?
 SELECT studio, ROUND(AVG(worldwide)) AS global_average FROM topmovies
