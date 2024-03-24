@@ -1,3 +1,5 @@
+/* In this project, I want to build a table that shows the character name of all the main Yellowjackets, the actors who play their teenage selves in the '96 timeline, and the actors who play their adult selves in the '21 timeline. */
+
 CREATE TABLE actors (actor_id INTEGER PRIMARY KEY, name TEXT, birth_year INTEGER, birth_place TEXT, hair_color TEXT);
 
 INSERT INTO actors VALUES (1, "Liv Hewson", 1995, "Canberra, Australia", "red");
