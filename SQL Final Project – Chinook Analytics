@@ -1,5 +1,5 @@
-#In this SQL, I'm querying a database with multiple tables in it to analyze buying patterns in a digital media store.
-
+--Analysis: The final SQL project to demonstrate skills acquired in the Break Into Tech Bootcamp. I used SQL to query a database with multiple tables in it to analyze buying patterns in a digital media store.
+--Skills demonstrated: ETL (Extract, Transform, Load), data manipulation
 
 -- #1. List the top 5 most purchased genres, along with the total number of tracks sold for each genre.
 SELECT g.Name AS Genre, COUNT(*) AS TracksSold
