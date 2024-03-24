@@ -1,4 +1,4 @@
---<b>Analysis:</b> Extracts various insights from a Netflix titles database using PostgreSQL, focusing on content counts, recent additions, sorting, directorship, and historical records.
+--Analysis: Extracts various insights from a Netflix titles database using PostgreSQL, focusing on content counts, recent additions, sorting, directorship, and historical records.
 --Dataset: https://www.db-fiddle.com/f/pfsdrKi9cgCDp4Wwb77AF/0
 
 /* 1. How many movie titles are there in the database? (movies only, not tv shows) */
