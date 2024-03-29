@@ -4,10 +4,11 @@
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
 
-# hey there 👋🏻🤓
+# <picture><img src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f44b/512.gif" alt="👋" width="28"></picture> &nbsp; Hey there! I'm Janelle
 
-### welcome to my SQL portfolio! this code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
 
-### take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
+### Welcome to my SQL portfolio! This code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
 
-#### PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
+### Take a look around! If you want to learn more, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
+
+#### PS be sure to check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
