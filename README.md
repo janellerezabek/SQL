@@ -9,6 +9,6 @@
 
 ### Welcome to my SQL portfolio! This code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
 
-### Take a look around! If you want to learn more, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
+### Take a look around and make yourself comfortable! If you want to learn more, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
 
 #### PS be sure to check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
