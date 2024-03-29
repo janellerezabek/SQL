@@ -4,10 +4,10 @@
 ![Microsoft Excel](https://img.shields.io/badge/Microsoft_Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
 ![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=Tableau&logoColor=white)
 
-## hey there 👋🏻🤓
+### hey there 👋🏻🤓
 
-### welcome to my SQL portfolio! this code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
+## welcome to my SQL portfolio! this code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
 
-### take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com :) 
+## take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com.
 
-### PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
+# PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
