@@ -8,6 +8,6 @@
 
 ### welcome to my SQL portfolio! this code repository contains a collection of SQL projects and queries I've worked on, showcasing my skills in data analysis and data manipulation. 
 
-### take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com.
+### take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
 
 #### PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
