@@ -1,7 +1,8 @@
---Analysis: In this project, I downloaded Spotify data from Kaggle, created a table to insert the Spotify data into, and performed analytics on the data using SQL (focusing on artist popularity, energy levels, song duration, and danceability).
+--Analysis: In this project, I downloaded Spotify data from Kaggle, created a table to insert the Spotify data into, and performed analytics on the data using SQL, focusing on artist popularity, energy levels, song duration, and danceability.
 --Dataset: https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021?select=spotify_top50_2021.csv
+--Skills demonstrated: table creation + data import, data manipulation, ETL (Extract, Transform, Load)
 
-#Creating the table:
+#First, I created the table:
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
 artist_name varchar NOT NULL,
@@ -43,7 +44,7 @@ FROM BIT_DB.Spotifydata
 ORDER BY popularity DESC
 LIMIT 10;
 
-#Next I determined what the average tempo is for songs with different levels of danceability (e.g., low, medium, high).
+#Next, I determined what the average tempo is for songs with different levels of danceability (e.g., low, medium, high).
 SELECT
   CASE
     WHEN danceability < 0.4 THEN 'Low'
