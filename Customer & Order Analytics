@@ -1,5 +1,6 @@
---In this SQL, I queried a database with multiple tables in it to quantify statistics about customer and order data. 
+--Analysis: In this project, I queried a database with multiple tables in it to quantify statistics about customer and order data.
 --Dataset: Private license
+--Skills demonstrated: WHERE, JOIN, AND, GROUP BY, data manipulation, ETL (Extract, Transform, Load)
 
 #1. How many orders were placed in January? Remember to filter out the blank and incorrect order IDs like we did in the "dealing with messy data" section of the previous lesson!
 SELECT count(distinct orderID) 
