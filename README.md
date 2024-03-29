@@ -10,4 +10,4 @@
 
 ### take a look around! if you have any questions, gimme a holler at rezabekje@gmail.com.
 
-# PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
+#### PS check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
