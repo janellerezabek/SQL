@@ -1,0 +1,75 @@
+—Analysis: In this project, I created a set of questions that a job seeker might be interested in learning about from the data. I used a Fortune 500 dataset and wrote SQL to answer the questions – what might be good to know about a company before working there? What would be an interesting way to compare certain companies or industries to others?
+--Dataset: https://www.db-fiddle.com/f/saxdDCCyos6z6UdpjeEXSJ/0  
+--Skills demonstrated: CASE statement, HAVING clause, logical operators, aggregate functions, ETL (Extract, Transform, Load), data manipulation
+
+/* Which industries have the highest average revenue? */
+SELECT industry, revenue
+FROM fortune_companies
+ORDER BY revenue DESC
+LIMIT 5;
+
+/* Create a query that groups companies into three categories based on their revenue using a CASE statement, then display the count of companies in each category. */
+SELECT COUNT(*) AS company_count,
+	CASE
+		WHEN revenue >= 350 THEN "high_revenue"
+		WHEN revenue >= 200 THEN "medium_revenue"
+		WHEN revenue <= 199 THEN "low_revenue"
+		ELSE "null"
+	END AS revenue_category
+FROM fortune_companies
+GROUP BY revenue_category;
+
+/* Are there any industries where companies tend to offer more paid time off? */ 
+SELECT industry, ROUND(AVG(paid_time_off_days)) AS avg_pto_days
+FROM fortune_companies
+GROUP BY industry
+ORDER BY paid_time_off_days DESC
+LIMIT 5;
+
+/* How does the average employee tenure vary across different industries? */
+SELECT avg_employee_tenure, industry
+FROM fortune_companies
+GROUP BY industry
+ORDER BY avg_employee_tenure DESC;
+
+/* What's the relationship between maternity leave weeks and average employee tenure? */ 
+SELECT industry, ROUND(AVG(maternity_leave_weeks)) AS avg_maternity_leave, avg_employee_tenure AS avg_tenure
+FROM fortune_companies
+GROUP BY industry 
+ORDER BY avg_maternity_leave DESC;
+
+/* Are there any correlations between the number of employees and maternity leave policies? */ 
+SELECT industry, AVG(employees) AS avg_employees, ROUND(AVG(maternity_leave_weeks)) AS avg_maternity_leave
+FROM fortune_companies
+GROUP BY industry;
+
+/* Are there any industries where companies offer both extensive paid time off and maternity leave? */
+/* Combined HAVING clause to filter for companies with above-average paid time off days and maternity leave weeks. */
+SELECT industry, AVG(paid_time_off_days) AS avg_pto_days, AVG(maternity_leave_weeks) AS avg_maternity_leave
+FROM fortune_companies
+GROUP BY industry
+HAVING AVG(paid_time_off_days) > (SELECT AVG(paid_time_off_days) FROM fortune_companies)
+AND AVG(maternity_leave_weeks) > (SELECT AVG(maternity_leave_weeks) FROM fortune_companies);
+
+/* Which industries have an average number of employees greater than 50,000? */
+SELECT industry, AVG(employees) AS avg_employees
+FROM fortune_companies
+GROUP BY industry
+HAVING avg_employees > 50000
+ORDER BY avg_employees DESC;
+
+/* Which companies have revenue above the industry average? */ 
+SELECT company_name, revenue
+FROM fortune_companies AS fc1
+WHERE revenue > (
+    SELECT AVG(revenue)
+    FROM fortune_companies AS fc2
+    WHERE fc1.industry = fc2.industry
+    )
+ORDER BY revenue DESC;
+
+/* Are there any industries where the ratio of healthcare benefits to revenue is unusually low? */ 
+SELECT industry, AVG(healthcare_benefits / revenue) AS avg_healthcare_ratio
+FROM fortune_companies
+GROUP BY industry
+ORDER BY avg_healthcare_ratio ASC;
