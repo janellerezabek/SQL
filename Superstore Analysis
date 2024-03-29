@@ -1,0 +1,21 @@
+--Analysis: In this project, I collected information from a superstore database, focusing on item listings, prices, stock levels, and customer ratings across various categories.
+--Dataset: https://www.db-fiddle.com/f/PvBAaQwEUSWAxZCsg4Vmx/0 
+--Skills demonstrated: data manipulation, ETL (Extract, Transform, Load)
+
+-- 1. Use a SELECT statment to order the items by price.
+SELECT item_name, price
+FROM superstore
+ORDER BY price;
+
+-- 2. Show a statistic about the stock quantity.
+SELECT SUM(stock_quantity)
+FROM superstore;
+
+-- 3. Show a statistic about the price for items in the category of "Kitchen Supplies".
+SELECT AVG(price), "Kitchen_Supplies"
+FROM superstore;
+
+-- 4. Show the stock quantity of "Air Purifiers" and change column name.
+SELECT SUM(stock_quantity) AS total_air_purifiers_in_stock
+FROM superstore
+WHERE item_name = "Air Purifier";
