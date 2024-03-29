@@ -119,43 +119,14 @@ FROM invoices inv
 JOIN customers c ON c.CustomerId = inv.CustomerId
 JOIN employees e ON e.EmployeeId = c.SupportRepId;
 
--- #18. How many Invoices were there in 2009?
-SELECT COUNT(*)
-FROM invoices
-WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
-
--- #19. What are the total sales for 2009?
-SELECT SUM(Total)
-FROM invoices
-WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
-
--- #20. Write a query that includes the purchased track name with each invoice line ID.
-SELECT ite.InvoiceLineId, t.Name
-FROM invoice_items ite
-JOIN tracks t ON t.TrackId = ite.TrackId;
-
--- #21. Write a query that includes the purchased track name AND artist name with each invoice line ID.
-SELECT il.InvoiceLineId, t.Name AS TrackName, ar.Name AS ArtistName
-FROM invoice_items il
-JOIN tracks t ON t.TrackId = il.TrackId 
-JOIN albums al ON t.AlbumId = al.AlbumId
-JOIN artists ar ON ar.ArtistId = ar.ArtistId;
-
--- #22. Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
-SELECT t.Name AS TrackName, al.Title AS AlbumName, mt.Name AS MediaType, g.Name AS GenreName
-FROM tracks t
-JOIN albums al ON al.AlbumId = t.AlbumId
-JOIN media_types mt ON mt.MediaTypeId = t.MediaTypeId
-JOIN genres g ON g.GenreId = t.GenreId;
-
--- #23. Show the total sales made by each sales agent.
+-- #18. Show the total sales made by each sales agent.
 SELECT e.FirstName || ' ' || e.LastName AS SalesAgentName, ROUND(SUM(inv.Total), 2) AS TotalSales
 FROM invoices inv
 JOIN customers c ON inv.CustomerId = c.CustomerId
 JOIN employees e ON c.SupportRepId = e.EmployeeId
 GROUP BY SalesAgentName;
 
--- #24. Which sales agent made the most dollars in sales in 2009?
+-- #19. Which sales agent made the most dollars in sales in 2009?
 SELECT e.FirstName || ' ' || e.LastName AS SalesAgentName, ROUND(SUM(inv.Total), 2) AS TotalSales
 FROM employees e
 JOIN customers c ON c.SupportRepId = e.EmployeeId
@@ -165,3 +136,31 @@ GROUP BY SalesAgentName
 ORDER BY TotalSales DESC
 LIMIT 1;
 
+-- #20. How many Invoices were there in 2009?
+SELECT COUNT(*)
+FROM invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+-- #21. What are the total sales for 2009?
+SELECT SUM(Total)
+FROM invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31';
+
+-- #22. Write a query that includes the purchased track name with each invoice line ID.
+SELECT ite.InvoiceLineId, t.Name
+FROM invoice_items ite
+JOIN tracks t ON t.TrackId = ite.TrackId;
+
+-- #23. Write a query that includes the purchased track name AND artist name with each invoice line ID.
+SELECT il.InvoiceLineId, t.Name AS TrackName, ar.Name AS ArtistName
+FROM invoice_items il
+JOIN tracks t ON t.TrackId = il.TrackId 
+JOIN albums al ON t.AlbumId = al.AlbumId
+JOIN artists ar ON ar.ArtistId = ar.ArtistId;
+
+-- #24. Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre.
+SELECT t.Name AS TrackName, al.Title AS AlbumName, mt.Name AS MediaType, g.Name AS GenreName
+FROM tracks t
+JOIN albums al ON al.AlbumId = t.AlbumId
+JOIN media_types mt ON mt.MediaTypeId = t.MediaTypeId
+JOIN genres g ON g.GenreId = t.GenreId;
