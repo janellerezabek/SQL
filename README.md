@@ -12,3 +12,6 @@
 ### Take a look around & make yourself comfortable! If you want to learn more, gimme a holler at rezabekje@gmail.com or on **[LinkedIn](https://www.linkedin.com/in/janellerezabek/)**.
 
 #### PS be sure to check out my [Tableau portfolio](https://public.tableau.com/app/profile/janelle.rezabek/vizzes) as well!
+
+
+##### Featured Projects
