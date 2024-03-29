@@ -1,5 +1,6 @@
 --Analysis: In this project, I extracted various insights from a Netflix titles database using PostgreSQL, focusing on content counts, recent additions, sorting, directorship, and historical records.
 --Dataset: https://www.db-fiddle.com/f/pfsdrKi9cgCDp4Wwb77AF/0
+--Skills demonstrated: JOIN, MAX, WHERE, data manipulation, ETL (Extract, Transform, Load)
 
 /* 1. How many movie titles are there in the database? (movies only, not tv shows) */
 SELECT count(*)
@@ -7,7 +8,7 @@ FROM "netflix_titles_info"
 WHERE type = 'Movie';
 
 /* 2. When was the most recent batch of tv shows and/or movies added to the database? */
-SELECT max(date(date_added))
+SELECT MAX(date(date_added))
 FROM "netflix_titles_info";
 
 /* 3. List all the movies and tv shows in alphabetical order. */
