@@ -26,10 +26,10 @@
 | Top 100 Movies             | Analyzes data found from a ‘Top 100 Movies’ dataset + answers questions using SQL | [View](https://github.com/janellerezabek/SQL/blob/main/Top%20100%20Movies%20Analytics) |
 
 
-| Project Name | Description | Link |
-|:------------:|-------------|:----:|
+| Project Name | Description |
+|:------------:|-------------|
 | [Chinook](https://github.com/janellerezabek/SQL/blob/main/Chinook%20Analytics%20(SQL%20Final%20Project))      | Analyzes a music store database to deliver insights on financial performance, buying patterns, music genre preferences, and top-selling tracks. The final SQL project to demonstrate skills acquired in the Break Into Tech Bootcamp |
-| Netflix                  | Extracts various insights from a Netflix titles database, focusing on content counts, recent additions, sorting, directorship, and historical records | [View](https://github.com/janellerezabek/SQL/blob/main/Netflix%20Analytics) |
+| [Netflix] (https://github.com/janellerezabek/SQL/blob/main/Netflix%20Analytics) | Extracts various insights from a Netflix titles database, focusing on content counts, recent additions, sorting, directorship, and historical records |
 | Fortune 500               | Explores a (fake) database of Fortune companies, examining employee tenure, revenue categories, maternity leave standards, and the relationship between healthcare benefits, paid time off, and employee retention across different sectors. | [View](https://github.com/janellerezabek/SQL/blob/main/Fortune%20500) |
 | Color Me Cozy             | Table creation + data insertion result in creation of a digital knitting shop. SQL is used to analyze and compare yarn options, specify yarn types, and examine pricing of the items in the shop | [View](https://github.com/janellerezabek/SQL/blob/main/%22Color%20Me%20Cozy%22%20Database%20%2B%20Stats) |
 | Superstore                | Collects information from a superstore database, focusing on item listings, prices, stock levels, and customer ratings across various categories. | [View](https://github.com/janellerezabek/SQL/blob/main/Superstore%20Analysis) |
